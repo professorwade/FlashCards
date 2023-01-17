@@ -64,7 +64,7 @@ layout = [
         [sg.Combo(load_chapters(), font=('Arial', 16), enable_events = True,
                   default_value='Select Chapter', size=(48, 1), key='-CHAPTER-')],
         # section 2
-          [sg.Multiline(size=(26, 10), justification= 'center', border_width=0, background_color= "#0C231E",
+          [sg.Multiline(size=(35, 10), justification= 'center', border_width=0, background_color= "#0C231E",
             font=('Courier', 48), no_scrollbar = True, key='-text-') ],
         # section 3
         [sg.Checkbox('Random', font=('Arial', 16), default=True, enable_events=True, key="-RND-"),
@@ -73,7 +73,7 @@ layout = [
          sg.Button('Next', font=('Arial', 16),enable_events=True, key='-NEXT-')]]
 
 
-window = sg.Window('Python Flashcards', layout,size=(800,800), grab_anywhere=False)
+window = sg.Window('Python Flashcards', layout,size=(1000,800), grab_anywhere=False)
 
 def update_display(txt):
     txt_len = len(txt)
