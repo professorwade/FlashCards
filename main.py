@@ -57,8 +57,6 @@ def choose_card(cards, rnd, ndx = 0):
     keys = list(cards.keys())     # create a list of all the keys
     return tuple((keys[ndx], cards[keys[ndx]], ndx))    # return single card as a tuple of value, definition, and current index
 
-
-
 # handles word wrap
 def update_display(window, txt):
     txt_len = len(txt)
@@ -124,8 +122,6 @@ def main():
 
     window = sg.Window('Flashcards', layout, size=(1000, 800), grab_anywhere=False)
 
-
-
     show_def = False
 
     # event loop
@@ -139,6 +135,7 @@ def main():
             load_cards(cards, chapters[0], lines)
             card = choose_card(cards, True)
             update_display(window, card[0])
+            window['-CHAPTER-'].update(value = chapters[0], values = chapters)
         elif event == '-CHAPTER-':
             load_cards(cards, values['-CHAPTER-'], lines)
             card = choose_card(cards, True)
